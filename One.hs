@@ -65,3 +65,8 @@ min' y z
   | y > z = z
 
 tail' (x:xs) = xs
+
+or' [] = False
+or' (x:xs)
+  | x == True = True
+  | otherwise = or' (xs)
