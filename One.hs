@@ -76,3 +76,5 @@ and' (x:xs)
   | x == False = False
   | otherwise = and' (xs)
   
+reverse' [] = []
+reverse' (x:xs) = (reverse' (xs)) ++ [x]
