@@ -115,6 +115,9 @@ reverse' (x:xs) = (reverse' (xs)) ++ [x]
 
 --last' x
 
+last' [n] = n
+last' (x:xs) = last' (xs)
+
 
 --tail' x
 
