@@ -70,3 +70,9 @@ or' [] = False
 or' (x:xs)
   | x == True = True
   | otherwise = or' (xs)
+
+and' [] = True
+and' (x:xs)
+  | x == False = False
+  | otherwise = and' (xs)
+  
