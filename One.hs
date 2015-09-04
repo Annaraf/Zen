@@ -123,6 +123,8 @@ tail' (x:xs) = xs
 
 --init' x
 
+init' [n] = []
+init' (x:xs) = [x] ++ (init' (xs))
 
 --max' x
 
