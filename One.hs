@@ -47,7 +47,6 @@ product' (x:xs) = x * product' xs
 head' (x:xs) = x
 
 chg' [n,m] = (n,m)
---zipp [[a]..[]] = [(a)]
 
 zip' [] _ = []
 zip' _ [] = []
