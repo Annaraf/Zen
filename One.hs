@@ -147,6 +147,9 @@ concat' [(x:xs)] = (x:xs)
 
 --intersperse' x
 
+intersperse' a [n] = [n]
+intersperse' a (x:xs) =[x] ++ [a] ++ (intersperse' a (xs))
+
 
 --inercalate' x
 
