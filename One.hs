@@ -347,8 +347,6 @@ group' (x:xs) = [take 1 (x:xs)] ++ group' (xs)
 splitAt' _ [] = ([],[])
 splitAt' n [m]
   | n == 0 = ([], [m])
-splitAt' n (x:xs)
-  | n >= (length (x:xs)) = ((x:xs), [])
 splitAt' n (x:xs) = ((take n (x:xs)), (drop n (x:xs)))
 
 
