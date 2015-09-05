@@ -182,7 +182,7 @@ min' y z
 
 
 --pembatas
---concat' x
+--concat' x (unfinished function)
 
 concat' [(x:xs)] = (x:xs)
 
@@ -195,7 +195,7 @@ intersperse' a (x:xs) =[x] ++ [a] ++ (intersperse' a (xs))
 
 
 --pembatas
---inercalate' x
+--inercalate' x (unfinished function)
 
 intercalate' n [(x:xs)]
     | n == (x:xs) = (x:xs)
