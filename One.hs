@@ -43,8 +43,8 @@ snd' (a,b) = b
 --pembatas
 --map' x
 
-map' (n) m [] = []
-map' (n) m (x:xs) = [(n) m x] ++ map' (n) m (xs)
+map' n [] = []
+map' n (x:xs) = [(n x)] ++ map' n xs
 
 --pembatas
 --filter' x
