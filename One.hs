@@ -88,6 +88,8 @@ zip' (a:as) (x:xs) = [(chg' ([a] ++ [x]))] ++ (zip' (as) (xs))
 --pembatas
 --nth' x
 
+nth' (x:xs) n = (head' (drop n (x:xs)))
+
 
 --pembatas
 --sort' x
