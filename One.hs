@@ -248,8 +248,10 @@ product' (x:xs) = x * product' xs
 words' x = x
 
 --pembatas
+--lines' x
 
-lines' x = x
+lines' a = [a]
+
 
 --pembatas
 
