@@ -87,11 +87,6 @@ sort' (x:xs) = (x:xs)
 
 --elem' x
 
-elem' n (x:xs)
-    | n == x = True
-    | n == [] = False
-    | otherwise = elem' n xs
-    
 
 --notElem' x
 
