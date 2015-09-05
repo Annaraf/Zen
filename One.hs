@@ -325,20 +325,32 @@ inits' x = x
 tails' x = x
 
 --pembatas
+--union' x
 
-union' x = x
+union' (x:xs) (y:ys) = (x:xs) ++ (y:ys)
+
 
 --pembatas
 
 intersect' x = x
 
 --pembatas
+--group' x
 
-group' x = x
+group' [] = []
+group' (x:xs) = [take 1 (x:xs)] ++ group' (xs)
+
 
 --pembatas
+--splitAt'
 
-splitAt' x = x
+splitAt' _ [] = ([],[])
+splitAt' n [m]
+  | n == 0 = ([], [m])
+splitAt' n (x:xs)
+  | n >= (length (x:xs)) = ((x:xs), [])
+splitAt' n (x:xs) = ((take n (x:xs)), (drop n (x:xs)))
+
 
 --pembatas
 
