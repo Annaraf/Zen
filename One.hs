@@ -15,8 +15,8 @@ null' x
 --pembatas
 --take' x
 
+take' _ [] = []
 take' n (x:xs)
-    | n > length' (x:xs) = (x:xs)
     | n == 0 = []
     | otherwise = [x] ++ (take' (n-1)(xs))
 
@@ -24,11 +24,9 @@ take' n (x:xs)
 --pembatas
 --drop' x
 
-drop' n (x:xs)
-    | n >= length' (x:xs) = []
-    | n == 0 = (x:xs)
-    | otherwise = (drop (n-1) xs)
-
+drop' 0 (x:xs) = (x:xs)
+drop' _ [] = []
+drop' n (x:xs) = (drop' (n-1) xs)
 
 --pembatas
 --fst' x
@@ -45,6 +43,8 @@ snd' (a,b) = b
 --pembatas
 --map' x
 
+map' (n) m [] = []
+map' (n) m (x:xs) = [(n) m x] ++ map' (n) m (xs)
 
 --pembatas
 --filter' x
@@ -233,6 +233,8 @@ zip3' (a:as) (b:bs) (c:cs) = [chg'' ([a] ++ [b] ++ [c])] ++ (zip3' (as) (bs) (cs
 --pembatas
 --sum' x
 
+sum' [] = 0
+sum' (x:xs) = x + (sum (xs))
 
 --pembatas
 --product' x
