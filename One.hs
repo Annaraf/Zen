@@ -95,6 +95,11 @@ elem' n (x:xs)
 
 --notElem' x
 
+notElem' _ [] = True
+notElem' n (x:xs)
+        | n == x = False
+        | n /= x = notElem' n (xs)
+        
 
 --head' x 
 
