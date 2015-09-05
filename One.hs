@@ -180,6 +180,13 @@ or' (x:xs)
 
 --zip3' x
 
+chg'' [a,b,c] = (a,b,c)
+
+zip3' [] _ _ = []
+zip3' _ [] _ = []
+zip3' _ _ [] = []
+zip3' (a:as) (b:bs) (c:cs) = [chg'' ([a] ++ [b] ++ [c])] ++ (zip3' (as) (bs) (cs))
+
 
 --sum' x
 
