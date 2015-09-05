@@ -272,8 +272,13 @@ dropWhile' x = x
 concatMap' x = x
 
 --pembatas
+--all' x
 
-all' x = x
+all' _ [] = True
+all' a (x:xs)
+  | a x == False = False
+  | otherwise = all' a (xs)
+  
 
 --pembatas
 
