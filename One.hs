@@ -281,8 +281,13 @@ all' a (x:xs)
   
 
 --pembatas
+--any' 
 
-any' x = x
+any' _ [] = False
+any' a (x:xs)
+  | a x == True = True
+  | otherwise = any' a (x:xs)
+
 
 --pembatas
 --insert' x
