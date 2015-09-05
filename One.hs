@@ -49,6 +49,11 @@ map' n (x:xs) = [(n x)] ++ map' n xs
 --pembatas
 --filter' x
 
+filter' _ [] = []
+filter' a (x:xs)
+  | a x == True = [x] ++ filter' a (xs)
+  | otherwise = filter' a (xs)
+
 
 --pembatas
 --delete' x
