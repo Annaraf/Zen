@@ -292,10 +292,6 @@ insert' n (x:xs)
 zipWith3' x = x
 
 
-
---unfinished function
---unfinished function
---unfinished function
 --pembatas
 
 -- 1.b
@@ -307,12 +303,18 @@ nub' x = x
 sort' x = x
 
 --pembatas
+--minimum' x
 
-minimum' x = x
+minimum' [n] = n
+minimum' (x:xs) = min' (x) (minimum' xs)
+
 
 --pembatas
+--maximum' x
 
-maximum' x = x
+maximum' [n] = n
+maximum' (x:xs) = max' (x) (maximum' xs)
+
 
 --pembatas
 
