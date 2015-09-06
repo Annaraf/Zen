@@ -67,6 +67,11 @@ delete' n (x:xs)
 --pembatas
 --deleteAll'
 
+deleteAll' _ [] = []
+deleteAll' n (x:xs)
+    | n == x = deleteAll' n (xs)
+    | otherwise = [x] ++ (deleteAll' n xs)
+
 
 --pembatas
 --foldl' x
