@@ -377,9 +377,11 @@ splitAt' n (x:xs) = ((take n (x:xs)), (drop n (x:xs)))
 partition' x = x
 
 --pembatas
+--replicate' x
 
-replicate' x = x
-
+replicate' n a
+  | n == 0 = []
+  | otherwise = [a] ++ replicate' (n-1) a
 
 
 
