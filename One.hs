@@ -321,11 +321,15 @@ zipWith3' x = x
 nub' x = x
 
 --pembatas
+--sort' x
 
-sort' x = x
+sort' [] = []
+sort' [n] = [n]
+sort' (x:xs)
+  | x == minimum (x:xs) = [x] ++ (sort' xs)
+  | x > (head xs)  = sort' (xs ++ [x])
+  | otherwise = sort' (xs ++ [x])
 
---pembatas
---minimum' x
 
 minimum' [n] = n
 minimum' (x:xs) = min' (x) (minimum' xs)
