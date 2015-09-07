@@ -358,8 +358,11 @@ maximum' (x:xs) = max' (x) (maximum' xs)
 inits' x = x
 
 --pembatas
+--tails' x
 
-tails' x = x
+tails' [] = [[]]
+tails' (x:xs) = [take (length (x:xs)) (x:xs)] ++ tails' xs
+
 
 --pembatas
 --union' x
