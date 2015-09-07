@@ -101,11 +101,6 @@ zip' (a:as) (x:xs) = [(chg' ([a] ++ [x]))] ++ (zip' (as) (xs))
 nth' (x:xs) n = (head' (drop n (x:xs)))
 
 
---pembatas
---sort' x
-
-sort' (x:xs) = (x:xs)
-
 
 --pembatas
 --scanl' x
@@ -192,10 +187,11 @@ min' y z
 
 
 --pembatas
---concat' x (unfinished function)
+--concat' x
 
-concat' [(x:xs)] = (x:xs)
-
+concat' [] = []
+concat' [a] = a
+concat' (n:m) = n ++ concat' m
 
 --pembatas
 --intersperse' x
@@ -205,10 +201,10 @@ intersperse' a (x:xs) =[x] ++ [a] ++ (intersperse' a (xs))
 
 
 --pembatas
---inercalate' x (unfinished function)
+--inercalate' x 
 
-intercalate' n [(x:xs)]
-    | n == (x:xs) = (x:xs)
+intercalate' a [n] = n
+intercalate' a (n:m) = n ++ a ++ (intercalate' a m)
 
 
 --pembatas
@@ -272,12 +268,21 @@ unlines' x = x
 unwords' x = x
 
 --pembatas
+--takeWhile' x
 
-takeWhile' x = x
+takeWhile' n (x:xs)
+  | n x == False = []
+  | n x == True = [x] ++ takeWhile' n (xs)
+
 
 --pembatas
+--dropWhile' x
 
-dropWhile' x = x
+dropWhile' _ [] = []
+dropWhile' n (x:xs)
+  | n x == False = (x:xs)
+  | n x == True = dropWhile' n xs
+
 
 --pembatas
 
@@ -318,7 +323,13 @@ zipWith3' x = x
 
 -- 1.b
 
-nub' x = x
+--pembatas
+--nub' x 
+
+nub' [] = []
+nub' [n] = [n]
+nub' (x:xs) = [x] ++ (nub' (deleteAll' x (x:xs)))
+
 
 --pembatas
 --sort' x
@@ -357,8 +368,13 @@ union' (x:xs) (y:ys) = (x:xs) ++ (y:ys)
 
 
 --pembatas
+--intersect' x
 
-intersect' x = x
+intersect' [] _ = []
+intersect' (x:xs) (y:ys)
+  | x == y = [x] ++ intersect' xs ys
+  | x /= y = intersect' xs (y:ys)
+
 
 --pembatas
 --group' x
