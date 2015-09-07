@@ -354,8 +354,11 @@ maximum' (x:xs) = max' (x) (maximum' xs)
 
 
 --pembatas
+--inits' x
 
-inits' x = x
+inits' [] = [[]]
+inits' (x:xs) = (inits' (init (x:xs))) ++ [(x:xs)]
+
 
 --pembatas
 --tails' x
