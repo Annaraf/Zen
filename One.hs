@@ -257,7 +257,7 @@ product' (x:xs) = x * product' xs
 --pembatas
 -- words' x
 
-words' x = x
+
 
 --pembatas
 --lines' x
@@ -266,12 +266,18 @@ lines' a = [a]
 
 
 --pembatas
+--unlines' x
 
-unlines' x = x
+unlines' [] = []
+unlines' (x:xs) = [x] ++ "\n" ++ unlines' xs
+
 
 --pembatas
+--unwords' x
 
-unwords' x = x
+unwords' [] = []
+unwords' (x:xs) = x ++ [' '] ++ unwords' xs
+
 
 --pembatas
 --takeWhile' x
