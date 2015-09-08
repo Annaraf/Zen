@@ -405,8 +405,14 @@ splitAt' n (x:xs) = ((take n (x:xs)), (drop n (x:xs)))
 
 
 --pembatas
+--partition' x
 
-partition' x = x
+partition' n (x:xs) = (filter n (x:xs), unfilter' n (x:xs))
+  where unfilter' _ [] = []
+        unfilter' a (x:xs)
+          | a x == False = [x] ++ unfilter' a (xs)
+          | otherwise = unfilter' a (xs)
+          
 
 --pembatas
 --replicate' x
