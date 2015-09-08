@@ -76,6 +76,9 @@ deleteAll' n (x:xs)
 --pembatas
 --foldl' x
 
+foldlll' n m [] = m
+foldlll' n m (x:xs) = n (foldlll' n m xs) (x)
+
 
 --pembatas
 --foldl1' x
@@ -84,11 +87,9 @@ deleteAll' n (x:xs)
 --pembatas
 --zip' x
 
-chg' [n,m] = (n,m)
-
-zip' [] _ = []
-zip' _ [] = []
-zip' (a:as) (x:xs) = [(chg' ([a] ++ [x]))] ++ (zip' (as) (xs))
+zipp' [] _ = []
+zipp' _ [] = []
+zipp' (x:xs) (y:ys) = [(x,y)] ++ zipp' xs ys
 
 
 --pembatas
@@ -228,12 +229,10 @@ or' (x:xs)
 --pembatas
 --zip3' x
 
-chg'' [a,b,c] = (a,b,c)
-
 zip3' [] _ _ = []
 zip3' _ [] _ = []
 zip3' _ _ [] = []
-zip3' (a:as) (b:bs) (c:cs) = [chg'' ([a] ++ [b] ++ [c])] ++ (zip3' (as) (bs) (cs))
+zip3' (a:as) (b:bs) (c:cs) = [(a,b,c)] ++ (zip3' (as) (bs) (cs))
 
 
 --pembatas
