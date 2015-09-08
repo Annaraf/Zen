@@ -95,6 +95,10 @@ zipp' (x:xs) (y:ys) = [(x,y)] ++ zipp' xs ys
 --pembatas
 --zipWith' x
 
+zipWith' n _ [] = []
+zipWith' n [] _ = []
+zipWith' n (x:xs) (y:ys) = [(n x y)] ++ (zipWith' n xs ys)
+
 
 --pembatas
 --nth' x
