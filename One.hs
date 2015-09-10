@@ -113,6 +113,9 @@ nth' (x:xs) n = (head' (drop n (x:xs)))
 --pembatas
 --scanl' x
 
+scanl'' n m [] = [m]
+scanl'' n m (x:xs) = [m] ++ (scanl'' n (n m x) xs)
+
 
 --pembatas
 --scanl1' x
