@@ -120,6 +120,10 @@ scanl'' n m (x:xs) = [m] ++ (scanl'' n (n m x) xs)
 --pembatas
 --scanl1' x
 
+scanl1' n [] = []
+scanl1' n [m] = [m]
+scanl1' n (x:xs) = [x] ++ (scanl1' n (((n x (head xs)) : (tail xs))))
+
 
 --pembatas
 --elem' x
