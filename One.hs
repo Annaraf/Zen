@@ -396,9 +396,15 @@ union' (x:xs) (y:ys) = (x:xs) ++ (y:ys)
 --intersect' x
 
 intersect' [] _ = []
-intersect' (x:xs) (y:ys)
-  | x == y = [x] ++ intersect' xs ys
-  | x /= y = intersect' xs (y:ys)
+
+intersect'' [] _ = []
+intersect'' (x:xs) (y:ys)
+  | x == temp x (y:ys) = [x] ++ intersect'' xs (y:ys)
+  | x /= temp x (y:ys) = intersect'' xs (y:ys)
+    where temp x [] = 0
+          temp x (y:ys)
+           | x == y = y
+           | x /= y = temp x ys
 
 
 --pembatas
