@@ -334,8 +334,12 @@ insert' n (x:xs)
   | n > x = [x] ++ (insert' n (xs))
 
 --pembatas
+--ZipWith3' x
 
-zipWith3' x = x
+ZipWith3' n _ _ [] = []
+zipWith3' n _ [] _ = []
+zipWith3' n [] _ _ = []
+zipWith3' n (x:xs) (y:ys) (z:zs) = [(n x y z)] ++ zipWith3' n xs ys zs
 
 
 --pembatas
