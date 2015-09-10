@@ -398,6 +398,7 @@ union' (x:xs) (y:ys) = (x:xs) ++ (y:ys)
 intersect' [] _ = []
 
 intersect'' [] _ = []
+intersect'' _ [] = []
 intersect'' (x:xs) (y:ys)
   | x == temp x (y:ys) = [x] ++ intersect'' xs (y:ys)
   | x /= temp x (y:ys) = intersect'' xs (y:ys)
