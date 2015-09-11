@@ -267,7 +267,7 @@ product' (x:xs) = x * product' xs
 
 
 --pembatas
---lines' x
+--lines' x (unfinished function)
 
 lines' a = [a]
 
@@ -304,8 +304,7 @@ dropWhile' n (x:xs)
 
 
 --pembatas
-
-concatMap' x = x
+--concatMap' x
 
 --pembatas
 --all' x
@@ -393,7 +392,16 @@ tails' (x:xs) = [take (length (x:xs)) (x:xs)] ++ tails' xs
 --pembatas
 --union' x
 
-union' (x:xs) (y:ys) = (x:xs) ++ (y:ys)
+union'' [] [] = []
+union'' (x:xs) [] = (x:xs)
+union'' [] (y:ys) = (y:ys)
+union'' (x:xs) (y:ys)
+  | y == temp y (x:xs) = union'' (x:xs) ys
+  | y /= temp y ((x:xs)) = union'' ((x:xs ++ [y])) ys
+    where temp y [] = 0
+          temp y (x:xs)
+           | y == x = y
+           | y /= x = temp y xs
 
 
 --pembatas
@@ -413,7 +421,7 @@ intersect'' (x:xs) (y:ys)
 
 
 --pembatas
---group' x
+--group' x (unfinished function)
 
 group' [] = []
 group' (x:xs) = [take 1 (x:xs)] ++ group' (xs)
