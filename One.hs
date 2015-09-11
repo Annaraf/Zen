@@ -84,7 +84,7 @@ foldlll' n m (x:xs) = n (foldlll' n m xs) (x)
 --foldl1' x
 
 foldll1' n [m] = m
-foldll1' n (x:xs) = n (foldll1' n xs) (x)
+foldll1' n (x:xs) = n (x) (foldll1' n xs)
 
 
 --pembatas
