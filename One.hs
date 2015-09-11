@@ -454,6 +454,11 @@ replicate' n a
   | otherwise = [a] ++ replicate' (n-1) a
 
 
+--pembatas
+--iterate' x
+
+iterate' n m = [n] ++ (iterate' n (n m))
+
 
 
 
