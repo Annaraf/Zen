@@ -457,7 +457,7 @@ replicate' n a
 --pembatas
 --iterate' x
 
-iterate' n m = [n] ++ (iterate' n (n m))
+iterate' n m = [m] ++ (iterate' n (n m))
 
 
 
