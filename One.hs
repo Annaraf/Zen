@@ -264,6 +264,12 @@ product' (x:xs) = x * product' xs
 --pembatas
 -- words' x
 
+words'' [] = []
+words'' (x:xs)
+  | x == ' '  = [takeWhile (' ' /=) (dropWhile (' ' ==) (x:xs))] ++ words'' (sisa (x:xs))
+  | x /= ' '  = [takeWhile (' ' /=) (x:xs)] ++ words'' (sisa (x:xs))
+     where sisa (x:xs) = drop (length (takeWhile (' ' /=) (dropWhile (' ' ==) (x:xs))) + 1) (x:xs)
+
 
 
 --pembatas
