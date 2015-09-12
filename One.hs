@@ -267,9 +267,14 @@ product' (x:xs) = x * product' xs
 
 
 --pembatas
---lines' x (unfinished function)
+--lines' x
 
-lines' a = [a]
+lines' [] = []
+lines' (x:xs)
+  | x == '\n'  = [takeWhile ('\n' /=) (dropWhile ('\n' ==) (x:xs))] ++ lines' (sisa (x:xs))
+  | x /= '\n'  = [takeWhile ('\n' /=) (x:xs)] ++ lines' (sisa (x:xs))
+   where sisa (x:xs) = drop (length (takeWhile ('\n' /=) (dropWhile ('\n' ==) (x:xs))) + 1) (x:xs)
+
 
 
 --pembatas
