@@ -421,11 +421,10 @@ intersect'' (x:xs) (y:ys)
 
 
 --pembatas
---group' x (unfinished function)
+--group' x
 
 group' [] = []
-group' (x:xs) = [take 1 (x:xs)] ++ group' (xs)
-
+group' (x:xs) = [takeWhile (x ==) (x:xs)] ++ group' (dropWhile (x ==) (x:xs))
 
 --pembatas
 --splitAt'
