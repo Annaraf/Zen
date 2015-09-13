@@ -319,6 +319,10 @@ dropWhile' n (x:xs)
 --pembatas
 --concatMap' x
 
+concatMap' a [] = []
+concatMap' a (x:xs) = a x ++ concatMap' a xs
+
+
 --pembatas
 --all' x
 
