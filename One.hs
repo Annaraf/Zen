@@ -106,7 +106,9 @@ zipWith' n (x:xs) (y:ys) = [(n x y)] ++ (zipWith' n xs ys)
 --pembatas
 --nth' x
 
-nth' (x:xs) n = (head' (drop n (x:xs)))
+nth'' (x:xs) a
+  | a == 0 = x
+  | a /= 0 = nth'' xs (a-1)
 
 
 
