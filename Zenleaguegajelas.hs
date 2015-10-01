@@ -382,8 +382,7 @@ ngitungBener (x:xs)
 pitgorr a = help a (reverse [((div (a*5) 10))..(a-1)]) 0
   where help x [] res = res
         help x (y:ys) res
-         | (((x^2) - (y^2)) == ((ceiling ( sqrt (fromIntegral ((x^2) - (y^2)))))^2)) && ((x + y + (ceiling ( sqrt (fromIntegral ((x^2) - (y^2)))))) > 20000) = 0
-         | (((x^2) - (y^2)) == ((ceiling ( sqrt (fromIntegral ((x^2) - (y^2)))))^2)) && ((x + y + (ceiling ( sqrt (fromIntegral ((x^2) - (y^2)))))) <= 20000) = help x (delete (ceiling ( sqrt (fromIntegral ((x^2) - (y^2))))) (ys)) (1+res)
+         | (((x^2) - (y^2)) == ((ceiling ( sqrt (fromIntegral ((x^2) - (y^2)))))^2)) = help x (delete (ceiling ( sqrt (fromIntegral ((x^2) - (y^2))))) (ys)) (1+res)
          | ((x^2) - (y^2)) /= ((ceiling ( sqrt (fromIntegral ((x^2) - (y^2)))))^2)  = help x ys res
          | otherwise = 0
 
